@@ -92,26 +92,26 @@ const ageMap = ages //
 
 //^ sort
 // Sort companies by start year
-const sortedCompanies = companies.sort(function (c1, c2) {
-	if (c1.start > c2.start) {
-		return 1;
-	} else {
-		return -1;
-	}
-});
+// const sortedCompanies = companies.sort(function (c1, c2) {
+// 	if (c1.start > c2.start) {
+// 		return 1;
+// 	} else {
+// 		return -1;
+// 	}
+// });
 
-const sortedCompanies2 = companies.sort((a, b) => (a.start > b.start ? 1 : -1));
+// const sortedCompanies2 = companies.sort((a, b) => (a.start > b.start ? 1 : -1));
 
 // console.table(sortedCompanies2);
 
 // Sort ages
-const sortedAges = ages.sort((a, b) => a - b); // asc a - b, desc b - a
+// const sortedAges = ages.sort((a, b) => a - b); // asc a - b, desc b - a
 
 // console.table(sortedAges);
 
 // * seems like working but not when there is a single number
-const sortAgesTest = ages.sort();
-// console.table(sortAgesTest);
+// const sortAgesTest = ages.sort();
+// // console.table(sortAgesTest);
 
 //^ reduce
 
@@ -136,7 +136,14 @@ const totalYears = companies.reduce(function (total, company) {
 
 const totalYears2 = companies.reduce((total, company) => total + (company.end - company.start), 0);
 
-console.table(totalYears);
-console.table(totalYears2);
+// console.table(totalYears);
+// console.table(totalYears2);
 
 // Combine Methods
+
+const combined = ages //
+	.map((age) => age * 2)
+	.filter((age) => (age) => 40)
+	.sort((a, b) => a - b, 0);
+
+console.table(combined);
