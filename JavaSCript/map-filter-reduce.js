@@ -134,10 +134,39 @@ const users = [
 	{ firstName: 'Jane', lastName: 'Apple', age: 75 },
 	{ firstName: 'Sonsy', lastName: 'Jo', age: 23 },
 	{ firstName: 'Mike', lastName: 'Tyson', age: 55 },
+	{ firstName: 'Young', lastName: 'Guy', age: 25 },
 ];
 
-// list of full names
+// // list of full names
+// const fullNames = users.map((user) => `${user.firstName} ${user.lastName}`);
 
-const fullNames = users.map((user) => `${user.firstName} ${user.lastName}`);
+// console.log(fullNames);
 
-console.log(fullNames);
+// // how many people have particular age?
+// // { 55: 2, 75: 1, 23: 1, 25: 1 }
+// const output = users.reduce((acc, curr) => {
+// 	if (acc[curr.age]) {
+// 		acc[curr.age] = ++acc[curr.age];
+// 	} else {
+// 		acc[curr.age] = 1;
+// 	}
+// 	return acc;
+// }, {});
+
+// console.log(output);
+
+const ageLimit = 30;
+const result = users //
+	.filter((user) => user.age < ageLimit)
+	.map((user) => user.firstName);
+
+console.log(result);
+
+const result2 = users.reduce((acc, curr) => {
+	if (curr.age < ageLimit) {
+		acc.push(curr.firstName);
+	}
+	return acc;
+}, []);
+
+console.log(result2);
