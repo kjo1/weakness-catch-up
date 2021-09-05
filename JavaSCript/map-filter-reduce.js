@@ -32,6 +32,33 @@
 
 	console.log(output3);
 */
+	// ^ The map() method is used to apply a function on every element in an array and then return a new array.
+	/*
+	const nums = [11, 12, 13, 14];
+
+	let minus10 = [];
+	for (let i = 0; i < nums.length; i++) {
+		minus10[i] = nums[i] - 10;
+	}
+	console.log(minus10);
+
+	const minus10v2 = nums.map((value) => value - 10);
+	console.log(minus10v2);
+
+	const newArray = nums.map((v, i) => {
+		return {
+			value: v,
+			index: i,
+		};
+	});
+	console.table(newArray);
+
+	const cats = nums.map(() => 'cat');
+	console.log(cats);
+
+	const newArr = nums.map((v) => (v % 2 === 0 ? v * 2 : v));
+	console.log(newArr);
+	*/
 }
 
 {
@@ -77,6 +104,42 @@
 		.filter((x) => x > 4);
 	console.log(output6);
 	*/
+
+	// ^ The filter() method creates a new array filled with all the elements of the old array that pass a certain test, provided as a function.
+
+	const nums = [11, 12, 13, 14, 15, 16];
+	let evenNums = [];
+	for (let i = 0; i < nums.length; i++) {
+		if (nums[i] % 2 === 0) {
+			evenNums.push(nums[i]);
+		}
+	}
+	console.log(evenNums);
+
+	const evenNums2 = nums.filter((value) => value % 2 === 0);
+	console.log(evenNums2);
+
+	const data = [
+		{
+			country: 'Netherlands',
+			population: 17122267,
+		},
+		{
+			country: 'Germany',
+			population: 83694772,
+		},
+		{
+			country: 'United Kingdom',
+			population: 67767045,
+		},
+		{
+			country: 'Belgium',
+			population: 11572813,
+		},
+	];
+
+	const bigCountries = data.filter((v) => v.population > 50000000);
+	console.table(bigCountries);
 }
 
 {
@@ -128,45 +191,39 @@
  */
 }
 
-// for real world example
-const users = [
-	{ firstName: 'John', lastName: 'Mac', age: 55 },
-	{ firstName: 'Jane', lastName: 'Apple', age: 75 },
-	{ firstName: 'Sonsy', lastName: 'Jo', age: 23 },
-	{ firstName: 'Mike', lastName: 'Tyson', age: 55 },
-	{ firstName: 'Young', lastName: 'Guy', age: 25 },
-];
-
-// // list of full names
-// const fullNames = users.map((user) => `${user.firstName} ${user.lastName}`);
-
-// console.log(fullNames);
-
-// // how many people have particular age?
-// // { 55: 2, 75: 1, 23: 1, 25: 1 }
-// const output = users.reduce((acc, curr) => {
-// 	if (acc[curr.age]) {
-// 		acc[curr.age] = ++acc[curr.age];
-// 	} else {
-// 		acc[curr.age] = 1;
-// 	}
-// 	return acc;
-// }, {});
-
-// console.log(output);
-
-const ageLimit = 30;
-const result = users //
-	.filter((user) => user.age < ageLimit)
-	.map((user) => user.firstName);
-
-console.log(result);
-
-const result2 = users.reduce((acc, curr) => {
-	if (curr.age < ageLimit) {
-		acc.push(curr.firstName);
-	}
-	return acc;
-}, []);
-
-console.log(result2);
+{
+	// // for real world example
+	// const users = [
+	// 	{ firstName: 'John', lastName: 'Mac', age: 55 },
+	// 	{ firstName: 'Jane', lastName: 'Apple', age: 75 },
+	// 	{ firstName: 'Sonsy', lastName: 'Jo', age: 23 },
+	// 	{ firstName: 'Mike', lastName: 'Tyson', age: 55 },
+	// 	{ firstName: 'Young', lastName: 'Guy', age: 25 },
+	// ];
+	// // list of full names
+	// const fullNames = users.map((user) => `${user.firstName} ${user.lastName}`);
+	// console.log(fullNames);
+	// // how many people have particular age?
+	// // { 55: 2, 75: 1, 23: 1, 25: 1 }
+	// const output = users.reduce((acc, curr) => {
+	// 	if (acc[curr.age]) {
+	// 		acc[curr.age] = ++acc[curr.age];
+	// 	} else {
+	// 		acc[curr.age] = 1;
+	// 	}
+	// 	return acc;
+	// }, {});
+	// console.log(output);
+	// const ageLimit = 30;
+	// const result = users //
+	// 	.filter((user) => user.age < ageLimit)
+	// 	.map((user) => user.firstName);
+	// console.log(result);
+	// const result2 = users.reduce((acc, curr) => {
+	// 	if (curr.age < ageLimit) {
+	// 		acc.push(curr.firstName);
+	// 	}
+	// 	return acc;
+	// }, []);
+	// console.log(result2);
+}
